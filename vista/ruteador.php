@@ -3,9 +3,12 @@
 echo $controlador;
 echo $accion;
 
-include_once("controladores/controlador_paginas.php");
+include_once("controladores/controlador_".$controlador.".php");
 
-$controlador= new ControladorPaginas();
-$controlador->inicio();
+$objControlador="Controlador".ucfirst($controlador);
+
+$controlador= new $objControlador();
+
+$controlador->$accion();
 
 ?>

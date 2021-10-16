@@ -7,7 +7,7 @@
         }
         public function error(){
 
-            include_once("vistas/paginas/error.php");
+            include_once("vista/paginas/error.php");
 
         }
     }
