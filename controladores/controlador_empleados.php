@@ -35,6 +35,9 @@ class ControladorEmpleados{
         include_once("vista/empleados/editar.php");
 
     }
+    public function borrar(){
+        print_r($_GET);
+    }
 }
 
 
