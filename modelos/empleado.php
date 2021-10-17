@@ -34,6 +34,12 @@
             $sql->execute(array($nombre,$correo));
 
         }
+        public static function borrar($id){
+            $conexionBD=BD::crearInstancia();
+            $sql= $conexionBD->prepare(" DELETE FROM empleados WHERE id=? ");
+            $sql->execute(array($id));
+
+        }
     }
 
 ?>
