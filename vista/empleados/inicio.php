@@ -20,8 +20,8 @@
             <td> 
 
             <div class="btn-group" role="group" aria-label="">
-                <a href="#" class="btn btn-info">Editar</a>
-                <a href="?controlador=empleados&accion=borrar&id=<?php echo $empleado->id; ?>" class="btn btn-danger">Borrar</a>
+                <a href="?controlador=empleados&accion=editar&id=<?php echo $empleado->id; ?>" class="btn btn-info">Editar</a>
+                    <a href="?controlador=empleados&accion=borrar&id=<?php echo $empleado->id; ?>" class="btn btn-danger">Borrar</a>
                 </div>
 
             </td>

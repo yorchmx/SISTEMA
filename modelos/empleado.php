@@ -36,10 +36,18 @@
         }
         public static function borrar($id){
             $conexionBD=BD::crearInstancia();
-            $sql= $conexionBD->prepare(" DELETE FROM empleados WHERE id=? ");
+            $sql= $conexionBD->prepare(" DELETE FROM empleados WHERE id=?");
             $sql->execute(array($id));
 
         }
-    }
+        public static function buscar($id){
 
+            $conexionBD=BD::crearInstancia();
+
+            $sql= $conexionBD->prepare("SELECT * FROM empleados WHERE id=?");
+            $sql->execute(array($id));
+            $empleado=$sql->fetch();
+            return new Empleado($empleado['id'], $empleado['nombre'], $empleado['correo']);
+         }
+    }
 ?>
