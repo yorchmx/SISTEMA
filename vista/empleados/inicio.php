@@ -1,4 +1,12 @@
-<a name="" id="" class="btn btn-success" href="?controlador=empleados&accion=crear" role="button">Agregar empleado</a>
+<div class="card">
+    <div class="card-header">
+    <a name="" id="" class="btn btn-success" href="?controlador=empleados&accion=crear" role="button">Agregar empleado</a>
+
+    </div>
+    <div class="card-body">
+        
+    
+
 
 <table class="table table-bordered">
     <thead>
@@ -9,6 +17,8 @@
             <th>Acciones</th>
         </tr>
     </thead>
+    </div>
+</div>
     <tbody>
 
         <?php foreach ($empleados as $empleado) {   ?>

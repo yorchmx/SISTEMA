@@ -9,8 +9,6 @@ class ControladorEmpleados{
     public function inicio(){
 
         $empleados=Empleado::consultar();
-        
-        
 
         include_once("vista/empleados/inicio.php");
 
@@ -32,6 +30,17 @@ class ControladorEmpleados{
     }
 
     public function editar(){
+
+     
+        if($_POST){
+            $id=$_POST['id'];
+            $nombre=$_POST['nombre'];
+            $correo=$_POST['correo'];
+
+            Empleado::editar($id,$nombre,$correo);
+
+            header("Location:./?controlador=empleados&accion=inicio");
+        }
         $id=$_GET['id'];
 
         $empleado=(Empleado::buscar($id));

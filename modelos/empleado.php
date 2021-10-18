@@ -29,7 +29,6 @@
         public static function crear($nombre, $correo){
 
             $conexionBD=BD::crearInstancia();
-
             $sql= $conexionBD->prepare("INSERT INTO empleados(nombre, correo) VALUES(?,?)");
             $sql->execute(array($nombre,$correo));
 
@@ -48,6 +47,14 @@
             $sql->execute(array($id));
             $empleado=$sql->fetch();
             return new Empleado($empleado['id'], $empleado['nombre'], $empleado['correo']);
+         }
+
+         public static function editar($id,$nombre,$correo){
+
+            $conexionBD=BD::crearInstancia();
+            $sql= $conexionBD->prepare("UPDATE empleados SET nombre=?, correo=? WHERE id=? ");
+            $sql->execute(array($nombre,$correo,$id));
+
          }
     }
 ?>
